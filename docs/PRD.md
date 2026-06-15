@@ -1,7 +1,7 @@
 # Analogy Arcade PRD
 
 **Product name:** Analogy Arcade  
-**Version:** v0.3  
+**Version:** v0.4
 **Owner:** friendly-neighborhood-product-manager  
 **Status:** Public MVP live  
 **Last updated:** 2026-06-15  
@@ -152,6 +152,8 @@ The app returns:
 6. Mini quiz
 7. Agent trace
 8. Quality score
+9. Formatted learning card UI
+10. Quota-free sample card
 
 ---
 
@@ -420,6 +422,14 @@ A result should be rewritten if any of these are true:
 - [x] Log custom interest world to Google Sheets
 - [x] Test custom interest flow end-to-end
 
+### Phase 5.6: Learning Card UX — Complete
+
+- [x] Improve generated output formatting
+- [x] Render Markdown-style headings, bullets, bold text, and tables in the live app
+- [x] Add quota-free sample card button
+- [x] Allow users to preview the product without consuming Gemini quota
+- [x] Hide feedback form for sample cards so feedback only attaches to real generated request IDs
+
 ### Phase 6: Next Iteration — Planned
 
 - [ ] Add structured JSON output from agents
@@ -454,6 +464,14 @@ A result should be rewritten if any of these are true:
 ---
 
 ## 19. Changelog
+
+### v0.4
+
+- Improved live app output rendering so generated Markdown appears as a formatted learning card
+- Added support for headings, bullets, bold text, inline code, and basic tables
+- Added a quota-free sample card button
+- Confirmed users can preview a sample explanation without consuming Gemini quota
+- Hid feedback form for sample cards to avoid feedback rows without real generated request IDs
 
 ### v0.3
 
