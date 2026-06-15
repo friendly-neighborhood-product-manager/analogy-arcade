@@ -25,6 +25,7 @@ Explain boring, confusing, or scary topics through things you may actually care 
 - **Activepieces workflow runbook:** [docs/activepieces-workflow-runbook.md](docs/activepieces-workflow-runbook.md)
 - **Apps Script backend:** [appscript/Code.gs](appscript/Code.gs)
 - **Apps Script frontend:** [appscript/Index.html](appscript/Index.html)
+- **Security notes:** [SECURITY.md](SECURITY.md)
 
 > Public beta note: the live demo uses free-tier AI limits and has a daily request cap. Please do not enter private, sensitive, confidential, medical, legal, or financial information.
 
