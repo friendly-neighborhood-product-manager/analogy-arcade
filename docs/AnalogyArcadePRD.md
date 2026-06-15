@@ -3,7 +3,7 @@
 **Product name:** Analogy Arcade  
 **Version:** v0.1  
 **Owner:** friendly-neighborhood-product-manager  
-**Status:** Draft  
+**Status:** Public MVP live  
 **Last updated:** 2026-06-15  
 
 ---
@@ -371,36 +371,56 @@ A result should be rewritten if any of these are true:
 
 ## 16. Launch Plan
 
-### Phase 1: Repo Foundation
+### Phase 1: Repo Foundation — Complete
 
-- Create GitHub repo
-- Add README
-- Add PRD
-- Create Google Sheet backend
+- [x] Create GitHub repo
+- [x] Add README
+- [x] Add PRD
+- [x] Create Google Sheet backend
 
-### Phase 2: No-Code Prototype
+### Phase 2: No-Code / Low-Code Prototype — Complete
 
-- Create Google Form or Apps Script input
-- Connect request logging
-- Generate first explanation with Gemini
-- Save output to Google Sheet
+- [x] Create Apps Script web app input UI
+- [x] Connect request logging
+- [x] Generate first explanation with Gemini
+- [x] Save output to Google Sheet
+- [x] Return result to browser
 
-### Phase 3: Agentic Workflow
+### Phase 3: Agentic Workflow — Complete
 
-- Add classifier agent
-- Add interest mapper agent
-- Add critic agent
-- Add rewrite loop
-- Add quiz generator
-- Log agent trace
+- [x] Add Explainer Agent
+- [x] Add Analogy Critic Agent
+- [x] Add Rewrite Agent
+- [x] Log agent trace
+- [x] Return final rewritten output to user
 
-### Phase 4: Public Showcase
+### Phase 4: Public Showcase — Complete
 
-- Publish GitHub Pages site
-- Add screenshots
-- Add sample outputs
-- Add workflow diagrams
-- Add demo link
+- [x] Publish GitHub Pages site
+- [x] Add live demo link
+- [x] Add PRD
+- [x] Add agent architecture documentation
+- [x] Add architecture diagram
+- [x] Add prompt design documentation
+- [x] Add sample outputs
+
+### Phase 5: Feedback Loop — Complete
+
+- [x] Add Google Sheet feedback backend
+- [x] Add feedback UI to web app
+- [x] Capture user rating
+- [x] Capture issue tags
+- [x] Store feedback against request ID
+
+### Phase 6: Next Iteration — Planned
+
+- [ ] Add structured JSON output from agents
+- [ ] Split final output into separate Google Sheet columns
+- [ ] Add conditional rewrite logic
+- [ ] Add quota-safe composite agent mode
+- [ ] Add custom user-provided interest worlds
+- [ ] Add public gallery of best outputs
+- [ ] Add model provider fallback, such as Groq or Cloudflare Workers AI
 
 ---
 
@@ -427,6 +447,20 @@ A result should be rewritten if any of these are true:
 ---
 
 ## 19. Changelog
+
+### v0.2
+
+- Public Apps Script web app launched
+- Activepieces workflow connected to live web app
+- Gemini-powered Explainer Agent, Critic Agent, and Rewrite Agent working
+- Requests logged to Google Sheets
+- Outputs logged to Google Sheets
+- Agent traces logged to Google Sheets
+- Daily request cap added to protect free-tier AI quota
+- Privacy and responsible-use note added to UI
+- Feedback capture added to live app
+- GitHub Pages showcase published
+- Architecture, prompt design, and sample output docs added
 
 ### v0.1
 
