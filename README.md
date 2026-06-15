@@ -20,6 +20,7 @@ Explain boring, confusing, or scary topics through things you may actually care 
 - **Agent architecture:** [docs/agent-architecture.md](docs/agent-architecture.md)
 - **Architecture diagram:** [docs/architecture-diagram.md](docs/architecture-diagram.md)
 - **Prompt design:** [docs/prompt-design.md](docs/prompt-design.md)
+- **Sample outputs:** [docs/sample-outputs.md](docs/sample-outputs.md)
 
 > Public beta note: the live demo uses free-tier AI limits and has a daily request cap. Please do not enter private, sensitive, confidential, medical, legal, or financial information.
 
