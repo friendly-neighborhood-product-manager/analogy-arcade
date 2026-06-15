@@ -22,6 +22,7 @@ Explain boring, confusing, or scary topics through things you may actually care 
 - **Prompt design:** [docs/prompt-design.md](docs/prompt-design.md)
 - **Sample outputs:** [docs/sample-outputs.md](docs/sample-outputs.md)
 - **Evaluation & test plan:** [docs/evaluation-test-plan.md](docs/evaluation-test-plan.md)
+- **Activepieces workflow runbook:** [docs/activepieces-workflow-runbook.md](docs/activepieces-workflow-runbook.md)
 
 > Public beta note: the live demo uses free-tier AI limits and has a daily request cap. Please do not enter private, sensitive, confidential, medical, legal, or financial information.
 
