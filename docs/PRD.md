@@ -1,7 +1,7 @@
 # Analogy Arcade PRD
 
 **Product name:** Analogy Arcade  
-**Version:** v0.1  
+**Version:** v0.3  
 **Owner:** friendly-neighborhood-product-manager  
 **Status:** Public MVP live  
 **Last updated:** 2026-06-15  
@@ -127,7 +127,7 @@ Version 1 will not include:
 The user provides:
 
 - Topic
-- Interest world
+- Preset interest world or custom interest world
 - Audience level
 - Output style
 
@@ -412,13 +412,20 @@ A result should be rewritten if any of these are true:
 - [x] Capture issue tags
 - [x] Store feedback against request ID
 
+### Phase 5.5: Custom Interest Worlds — Complete
+
+- [x] Add “Something else...” option to the interest-world dropdown
+- [x] Add custom interest input field
+- [x] Pass custom interest world to Activepieces workflow
+- [x] Log custom interest world to Google Sheets
+- [x] Test custom interest flow end-to-end
+
 ### Phase 6: Next Iteration — Planned
 
 - [ ] Add structured JSON output from agents
 - [ ] Split final output into separate Google Sheet columns
 - [ ] Add conditional rewrite logic
 - [ ] Add quota-safe composite agent mode
-- [ ] Add custom user-provided interest worlds
 - [ ] Add public gallery of best outputs
 - [ ] Add model provider fallback, such as Groq or Cloudflare Workers AI
 
@@ -431,7 +438,7 @@ A result should be rewritten if any of these are true:
 3. Should public users be able to generate live outputs, or should the first public version show sample outputs only?
 4. What should the daily request limit be?
 5. Which interest worlds should be included in v1?
-6. Should the app support user-provided custom interests in v1?
+6. Should the app support user-provided custom interests in v1? **Resolved: Yes. Implemented in v0.3.**
 
 ---
 
@@ -447,6 +454,15 @@ A result should be rewritten if any of these are true:
 ---
 
 ## 19. Changelog
+
+### v0.3
+
+- Added custom interest world support
+- Added “Something else...” option to the interest-world dropdown
+- Added custom interest input field to the live web app
+- Confirmed custom interest worlds pass through to Activepieces
+- Confirmed custom interest worlds log correctly in Google Sheets
+- Tested custom interest flow end-to-end with APIs through Cricket
 
 ### v0.2
 
