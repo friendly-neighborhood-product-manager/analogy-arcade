@@ -1,0 +1,437 @@
+# Analogy Arcade PRD
+
+**Product name:** Analogy Arcade  
+**Version:** v0.1  
+**Owner:** friendly-neighborhood-product-manager  
+**Status:** Draft  
+**Last updated:** 2026-06-15  
+
+---
+
+## 1. Product Summary
+
+Analogy Arcade is a browser-only AI learning app that helps users understand any topic by explaining it through worlds they already care about.
+
+A user enters a topic, chooses an interest world, selects an audience level, and receives a personalized explanation that includes:
+
+- A tiny definition
+- An ELI5 explanation
+- A personalized analogy
+- A concept-to-analogy mapping table
+- A “where the analogy breaks” section
+- A mini quiz
+- A visible agent workflow trace
+
+The product is designed to demonstrate practical AI Product Management skills, including agentic workflows, prompt design, evaluation, personalization, guardrails, and no-code/low-code automation.
+
+---
+
+## 2. Problem
+
+Generic AI explainers are often useful but boring, inconsistent, and sometimes misleading.
+
+Users often ask:
+
+> “Can you explain this in a way I actually understand?”
+
+But most tools do not let users anchor explanations to their own interests, hobbies, or mental models.
+
+Analogy Arcade solves this by turning unfamiliar topics into familiar worlds such as:
+
+- Football tactics
+- Space missions
+- Bollywood drama
+- Brick-by-brick builds
+- Vacation itineraries
+- Superhero-style teams
+- Other user-provided interests
+
+---
+
+## 3. Target Users
+
+### Primary User
+
+Curious learners who want complex topics explained through familiar interests.
+
+Examples:
+
+- Product managers learning technical concepts
+- Students learning abstract concepts
+- Professionals trying to understand business or AI terminology
+- Internet users who prefer playful explanations over formal documentation
+
+### Secondary User
+
+Recruiters, hiring managers, and AI product leaders reviewing this as a portfolio project.
+
+They should be able to see evidence of:
+
+- Product thinking
+- AI workflow design
+- Agent orchestration
+- Evaluation and quality gates
+- Responsible AI decisions
+- Practical use of free/browser-based tools
+
+---
+
+## 4. User Goals
+
+Users should be able to:
+
+1. Enter any topic they want to understand.
+2. Pick an interest world they relate to.
+3. Choose an audience level.
+4. Receive a clear and fun explanation.
+5. Understand where the analogy is helpful and where it breaks.
+6. Test their understanding with a mini quiz.
+7. See how the AI workflow generated and checked the explanation.
+
+---
+
+## 5. Product Goals
+
+Analogy Arcade should:
+
+1. Make explanations more relatable and memorable.
+2. Demonstrate agentic AI workflows in a visible, understandable way.
+3. Use free or browser-based tools only.
+4. Avoid local downloads or paid hosting.
+5. Be publicly showcaseable through GitHub.
+6. Include quality guardrails that reduce misleading analogies.
+7. Log outputs and feedback for future iteration.
+
+---
+
+## 6. Non-Goals
+
+Version 1 will not include:
+
+- User accounts
+- Paid AI APIs
+- Local model downloads
+- Real-time web search by default
+- Medical, legal, or financial advice
+- Copyrighted images, logos, lyrics, movie scripts, or branded assets
+- Complex database infrastructure
+- Mobile app store distribution
+- Full LMS functionality
+
+---
+
+## 7. MVP Scope
+
+### Input
+
+The user provides:
+
+- Topic
+- Interest world
+- Audience level
+- Output style
+
+Example:
+
+```text
+Topic: OAuth
+Interest world: Vacations
+Audience level: Beginner Product Manager
+Output style: ELI5 + analogy + mini quiz
+```
+
+### Output
+
+The app returns:
+
+1. Tiny definition
+2. ELI5 explanation
+3. Personalized analogy
+4. Mapping table
+5. Where the analogy breaks
+6. Mini quiz
+7. Agent trace
+8. Quality score
+
+---
+
+## 8. MVP User Stories
+
+### Learner Stories
+
+- As a learner, I want to enter a topic so I can understand it quickly.
+- As a learner, I want to pick an interest world so the explanation feels familiar.
+- As a learner, I want to choose my audience level so the explanation is not too simple or too advanced.
+- As a learner, I want to see where the analogy breaks so I do not learn the wrong thing.
+- As a learner, I want a mini quiz so I can check whether I understood.
+
+### Portfolio Reviewer Stories
+
+- As a hiring manager, I want to see the agent workflow so I can understand how the product uses AI beyond a single prompt.
+- As an AI product leader, I want to see quality scoring so I know the builder understands evaluation.
+- As a recruiter, I want to see a polished public repo so I can quickly understand the project.
+
+---
+
+## 9. Agent Workflow
+
+The product will use a multi-step agentic workflow.
+
+```text
+User Input
+  ↓
+Intake Agent
+  ↓
+Topic Classifier Agent
+  ↓
+Interest Mapper Agent
+  ↓
+Explainer Agent
+  ↓
+Analogy Critic Agent
+  ↓
+Rewrite Agent
+  ↓
+Quiz Agent
+  ↓
+Publisher Agent
+  ↓
+Learning Card
+```
+
+### Agent Responsibilities
+
+| Agent | Responsibility |
+|---|---|
+| Intake Agent | Normalize user input into structured fields |
+| Topic Classifier Agent | Classify topic type and identify risk level |
+| Interest Mapper Agent | Map the topic to the user’s selected interest world |
+| Explainer Agent | Generate the explanation and analogy |
+| Analogy Critic Agent | Evaluate clarity, accuracy, analogy fit, and risk |
+| Rewrite Agent | Improve the explanation if quality is below threshold |
+| Quiz Agent | Generate a mini comprehension quiz |
+| Publisher Agent | Format the final output into a learning card |
+
+---
+
+## 10. Quality Guardrails
+
+Every final explanation should include:
+
+- A clear definition
+- A personalized analogy
+- A mapping table
+- A “where the analogy breaks” section
+- A mini quiz
+- A visible quality score
+
+The app should avoid pretending to be authoritative for:
+
+- Medical topics
+- Legal topics
+- Financial advice
+- Current events
+- Highly sensitive topics
+- Topics requiring precise factual grounding
+
+For these topics, the app should ask for source material or provide a clear caveat.
+
+---
+
+## 11. Evaluation Rubric
+
+Each generated explanation should be scored from 1 to 5.
+
+| Dimension | Question |
+|---|---|
+| Clarity | Is the explanation easy to understand? |
+| Accuracy | Does it avoid obvious factual errors? |
+| Analogy fit | Does the analogy map well to the topic? |
+| Usefulness | Would the user actually learn from it? |
+| Fun | Does it feel engaging and memorable? |
+| Safety | Does it avoid risky, misleading, or copyrighted content? |
+
+A result should be rewritten if any of these are true:
+
+- `clarity_score < 4`
+- `accuracy_score < 4`
+- `analogy_fit_score < 4`
+
+---
+
+## 12. Planned Tech Stack
+
+| Layer | Tool |
+|---|---|
+| Public showcase | GitHub Pages |
+| Repository | GitHub |
+| App UI | Google Apps Script Web App |
+| Storage | Google Sheets |
+| AI generation | Gemini API free tier |
+| Workflow automation | Activepieces |
+| Generated artifacts | Google Docs / Google Drive |
+| Analytics | Google Sheets / Looker Studio later |
+
+---
+
+## 13. Data Model
+
+### Requests
+
+| Field | Description |
+|---|---|
+| request_id | Unique request identifier |
+| timestamp | Time request was submitted |
+| topic | Topic entered by user |
+| interest_world | User-selected analogy world |
+| audience_level | Desired explanation level |
+| output_style | Requested format |
+| status | Request state |
+| result_url | Link to generated result, if available |
+
+### Outputs
+
+| Field | Description |
+|---|---|
+| request_id | Associated request |
+| tiny_definition | Short definition |
+| eli5_explanation | Simple explanation |
+| analogy | Personalized analogy |
+| mapping_table | Topic-to-world mapping |
+| where_analogy_breaks | Limits of the analogy |
+| mini_quiz | Quiz questions |
+| final_output | Full formatted response |
+
+### AgentTrace
+
+| Field | Description |
+|---|---|
+| request_id | Associated request |
+| agent_name | Agent step name |
+| step_number | Workflow step number |
+| input_summary | Summary of agent input |
+| output_summary | Summary of agent output |
+| score | Quality score if applicable |
+| next_action | Continue, rewrite, reject, or publish |
+
+### Feedback
+
+| Field | Description |
+|---|---|
+| request_id | Associated request |
+| timestamp | Feedback timestamp |
+| rating | User rating |
+| feedback_text | User notes |
+| too_simple | Boolean |
+| too_complex | Boolean |
+| analogy_wrong | Boolean |
+| not_fun | Boolean |
+| would_share | Boolean |
+
+---
+
+## 14. Success Metrics
+
+### MVP Product Metrics
+
+| Metric | Target |
+|---|---|
+| First successful generated explanation | Completed |
+| Number of sample outputs | 10+ |
+| Average quality score | 4.0+ |
+| Rewrite loop working | Yes |
+| Public README complete | Yes |
+| PRD maintained in GitHub | Yes |
+
+### User Experience Metrics
+
+| Metric | Description |
+|---|---|
+| Completion rate | Percent of submitted requests that produce an output |
+| Regeneration rate | Percent of outputs users want rewritten |
+| Positive feedback rate | Percent of thumbs-up or positive ratings |
+| Share intent | Percent of users who say they would share the result |
+| Analogy failure rate | Percent of users who mark the analogy as wrong |
+
+---
+
+## 15. Risks and Mitigations
+
+| Risk | Mitigation |
+|---|---|
+| The analogy is funny but inaccurate | Include critic agent and “where the analogy breaks” |
+| User enters high-stakes topic | Add topic classifier and caveat |
+| Free API quota is exhausted | Add daily usage cap |
+| Public users spam the app | Add lightweight rate limit or access code |
+| API key is exposed | Keep calls server-side only |
+| Output is too verbose | Add audience-level and length controls |
+| App feels like a generic chatbot | Show agent trace, quiz, mapping table, and quality score |
+
+---
+
+## 16. Launch Plan
+
+### Phase 1: Repo Foundation
+
+- Create GitHub repo
+- Add README
+- Add PRD
+- Create Google Sheet backend
+
+### Phase 2: No-Code Prototype
+
+- Create Google Form or Apps Script input
+- Connect request logging
+- Generate first explanation with Gemini
+- Save output to Google Sheet
+
+### Phase 3: Agentic Workflow
+
+- Add classifier agent
+- Add interest mapper agent
+- Add critic agent
+- Add rewrite loop
+- Add quiz generator
+- Log agent trace
+
+### Phase 4: Public Showcase
+
+- Publish GitHub Pages site
+- Add screenshots
+- Add sample outputs
+- Add workflow diagrams
+- Add demo link
+
+---
+
+## 17. Open Questions
+
+1. Should v1 use Google Forms first or go directly to Apps Script Web App?
+2. Should Activepieces orchestrate all agent steps, or should some logic live in Apps Script?
+3. Should public users be able to generate live outputs, or should the first public version show sample outputs only?
+4. What should the daily request limit be?
+5. Which interest worlds should be included in v1?
+6. Should the app support user-provided custom interests in v1?
+
+---
+
+## 18. Decision Log
+
+| Date | Decision | Reason |
+|---|---|---|
+| 2026-06-15 | Use GitHub as product documentation source of truth | Public portfolio visibility |
+| 2026-06-15 | Use Google Sheets as backend | Free, browser-based, easy to inspect |
+| 2026-06-15 | Include “where the analogy breaks” in every output | Reduces risk of misleading analogies |
+| 2026-06-15 | Use Activepieces for workflow orchestration | Demonstrates Zapier/n8n-style agent workflows |
+
+---
+
+## 19. Changelog
+
+### v0.1
+
+- Initial PRD created
+- MVP scope defined
+- Agent workflow proposed
+- Data model drafted
+- Success metrics and risks documented
