@@ -6,7 +6,7 @@ Explain boring, confusing, or scary topics through things you may actually care 
 - Bollywood 🪩
 - LEGO 🧱
 - vacations 🏖️
-- and other perfectly valid personality interests
+- and other perfectly valid interests
 
 ------
 
