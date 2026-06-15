@@ -49,6 +49,7 @@ The app returns:
 - A “where the analogy breaks” section
 - A mini quiz
 - A visible agent workflow trace
+- A quota-free sample card so users can preview the experience without using AI quota
 
 ---
 
