@@ -12,6 +12,14 @@ Explain boring, confusing, or scary topics through things you may actually care 
 
 **Pick a topic. Pick a vibe. Let AI turn “huh?” into “ohhh.”**
 
+## Live Project
+
+- **Showcase site:** https://friendly-neighborhood-product-manager.github.io/analogy-arcade/
+- **Live demo:** https://script.google.com/macros/s/AKfycby8jV-vfUYrWbiCJnYuhQgHflsHHAe23kZl2Tx25CPFIvltbwJiekLE49PJ3vXSuMzZ/exec
+- **PRD:** [docs/PRD.md](docs/PRD.md)
+
+> Public beta note: the live demo uses free-tier AI limits and has a daily request cap. Please do not enter private, sensitive, confidential, medical, legal, or financial information.
+
 Analogy Arcade is a browser-only AI learning app that explains any topic through worlds people already understand — football tactics, space missions, Bollywood drama, brick-by-brick builds, vacation itineraries, superhero-style teams, and more.
 
 The goal is not just to generate cute analogies. The goal is to demonstrate how agentic AI workflows can make explanations clearer, safer, more personalized, and more useful.
