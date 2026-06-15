@@ -1,7 +1,7 @@
 # Analogy-Arcade
 Explain boring, confusing, or scary topics through things you may actually care about: 
 
-— football ⚽️
+- football ⚽️
 - space 🛸
 - Bollywood 🪩
 - LEGO 🧱
