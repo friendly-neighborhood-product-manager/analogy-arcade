@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f7f4ef;
+        color: #1f2933;
+      }
+
+      .page {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+      }
+
+      .hero {
+        background: #ffffff;
+        border: 2px solid #111827;
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: 8px 8px 0 #111827;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 42px;
+        letter-spacing: -1px;
+      }
+
+      .tagline {
+        margin: 0;
+        font-size: 18px;
+        color: #4b5563;
+      }
+
+      .card {
+        margin-top: 28px;
+        background: #ffffff;
+        border: 1px solid #d1d5db;
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      label {
+        display: block;
+        font-weight: 700;
+        margin: 18px 0 8px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+        border: 1px solid #9ca3af;
+        border-radius: 10px;
+        font-size: 15px;
+        background: #ffffff;
+      }
+
+      textarea {
+        min-height: 84px;
+        resize: vertical;
+      }
+
+      button {
+        margin-top: 22px;
+        padding: 13px 18px;
+        border: 2px solid #111827;
+        border-radius: 999px;
+        background: #111827;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .sample-button {
+  margin-left: 10px;
+  background: #ffffff;
+  color: #111827;
+}
+
+      .secondary {
+        color: #6b7280;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+
+     .result {
+  line-height: 1.6;
+  background: #ffffff;
+  color: #111827;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+.result h2 {
+  margin-top: 22px;
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.result h2:first-child {
+  margin-top: 0;
+}
+
+.result h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.result p {
+  margin: 10px 0;
+}
+
+.result ul {
+  margin: 8px 0 12px 22px;
+}
+
+.result li {
+  margin: 5px 0;
+}
+
+.result table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 14px 0;
+}
+
+.result th,
+.result td {
+  border: 1px solid #d1d5db;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.result th {
+  background: #f3f4f6;
+}
+
+.result code {
+  background: #f3f4f6;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+      .meta {
+        font-size: 13px;
+        color: #6b7280;
+        margin-bottom: 12px;
+      }
+
+      .error {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+        padding: 14px;
+        border-radius: 12px;
+        white-space: pre-wrap;
+      }
+
+      .success {
+        background: #dcfce7;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+        padding: 14px;
+        border-radius: 12px;
+        margin-top: 16px;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .pill {
+        border: 1px solid #d1d5db;
+        background: #f9fafb;
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 13px;
+      }
+
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 10px;
+        background: #f9fafb;
+      }
+
+      .checkbox-item input {
+        width: auto;
+      }
+
+      .checkbox-item label {
+        margin: 0;
+        font-weight: 500;
+      }
+
+            .custom-interest {
+        display: none;
+        margin-top: 12px;
+      }
+
+      .feedback-title {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <section class="hero">
+        <h1>Analogy Arcade</h1>
+        <p class="tagline">Pick a topic. Pick a vibe. Let AI turn “huh?” into “ohhh.”</p>
+
+        <div class="pill-row">
+          <span class="pill">Football tactics</span>
+          <span class="pill">Space missions</span>
+          <span class="pill">Bollywood drama</span>
+          <span class="pill">Brick-by-brick builds</span>
+          <span class="pill">Vacation brain</span>
+          <span class="pill">Superhero-style teams</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <form id="arcadeForm">
+          <label for="topic">What do you want to understand?</label>
+          <input
+            id="topic"
+            name="topic"
+            type="text"
+            placeholder="Examples: OAuth, APIs, technical debt, product-market fit"
+            required
+          >
+
+          <label for="interest_world">Explain it through...</label>
+          <select id="interest_world" name="interest_world" required>
+            <option value="Football tactics">Football tactics</option>
+            <option value="Space missions">Space missions</option>
+            <option value="Bollywood drama">Bollywood drama</option>
+            <option value="Brick-by-brick builds">Brick-by-brick builds</option>
+            <option value="Vacation itineraries">Vacation itineraries</option>
+            <option value="Superhero-style teams">Superhero-style teams</option>
+            <option value="Arcade games">Arcade games</option>
+            <option value="Cooking">Cooking</option>
+            <option value="__custom__">Something else...</option>
+          </select>
+
+          <div id="customInterestWrapper" class="custom-interest">
+  <label for="custom_interest_world">Custom interest world</label>
+  <input
+    id="custom_interest_world"
+    name="custom_interest_world"
+    type="text"
+    placeholder="Examples: Formula 1, gardening, cricket, anime, baking, hiking, finance memes"
+  >
+</div>
+
+          <label for="audience_level">Audience level</label>
+          <select id="audience_level" name="audience_level">
+            <option value="Beginner">Beginner</option>
+            <option value="Beginner Product Manager">Beginner Product Manager</option>
+            <option value="Curious teenager">Curious teenager</option>
+            <option value="Executive">Executive</option>
+            <option value="Technical beginner">Technical beginner</option>
+          </select>
+
+          <label for="output_style">Output style</label>
+          <textarea id="output_style" name="output_style">ELI5 + analogy + mapping table + where the analogy breaks + mini quiz</textarea>
+
+          <button id="submitButton" type="submit">Explain it 🎮</button>
+          <button id="sampleButton" class="sample-button" type="button">Show sample card</button>
+          <p class="secondary">
+            Note: This demo uses free-tier AI limits and has a daily request cap.
+            Please do not enter private, sensitive, confidential, medical, legal, or financial information.
+            Also, please do not smash the button like it owes you money.
+          </p>
+        </form>
+      </section>
+
+      <section id="outputCard" class="card" style="display: none;">
+        <div id="resultMeta" class="meta"></div>
+        <div id="resultBox" class="result"></div>
+      </section>
+
+      <section id="feedbackCard" class="card" style="display: none;">
+        <h2 class="feedback-title">Help improve the arcade</h2>
+        <p class="secondary">
+          Your feedback is saved to the project backend and helps improve prompts, scoring, and product decisions.
+        </p>
+
+        <form id="feedbackForm">
+          <label for="rating">Overall rating</label>
+          <select id="rating" name="rating">
+            <option value="5">5 — Nailed it</option>
+            <option value="4">4 — Pretty good</option>
+            <option value="3">3 — Fine, but could be better</option>
+            <option value="2">2 — Not very useful</option>
+            <option value="1">1 — Confusion remains undefeated</option>
+          </select>
+
+          <label>What happened?</label>
+          <div class="checkbox-grid">
+            <div class="checkbox-item">
+              <input id="too_simple" type="checkbox">
+              <label for="too_simple">Too simple</label>
+            </div>
+
+            <div class="checkbox-item">
+              <input id="too_complex" type="checkbox">
+              <label for="too_complex">Too complex</label>
+            </div>
+
+            <div class="checkbox-item">
+              <input id="analogy_wrong" type="checkbox">
+              <label for="analogy_wrong">Analogy felt wrong</label>
+            </div>
+
+            <div class="checkbox-item">
+              <input id="not_fun" type="checkbox">
+              <label for="not_fun">Not fun enough</label>
+            </div>
+
+            <div class="checkbox-item">
+              <input id="would_share" type="checkbox">
+              <label for="would_share">I would share this</label>
+            </div>
+          </div>
+
+          <label for="feedback_text">Optional notes</label>
+          <textarea
+            id="feedback_text"
+            name="feedback_text"
+            placeholder="What should the next version do better?"
+          ></textarea>
+
+          <button id="feedbackButton" type="submit">Submit feedback</button>
+          <div id="feedbackMessage"></div>
+        </form>
+      </section>
+    </div>
+
+    <script>
+      const form = document.getElementById('arcadeForm');
+      const button = document.getElementById('submitButton');
+      const sampleButton = document.getElementById('sampleButton');
+      const outputCard = document.getElementById('outputCard');
+      const resultMeta = document.getElementById('resultMeta');
+      const resultBox = document.getElementById('resultBox');
+
+      const feedbackCard = document.getElementById('feedbackCard');
+      const feedbackForm = document.getElementById('feedbackForm');
+      const feedbackButton = document.getElementById('feedbackButton');
+      const feedbackMessage = document.getElementById('feedbackMessage');
+
+      const interestWorldSelect = document.getElementById('interest_world');
+const customInterestWrapper = document.getElementById('customInterestWrapper');
+const customInterestInput = document.getElementById('custom_interest_world');
+
+interestWorldSelect.addEventListener('change', function() {
+  if (interestWorldSelect.value === '__custom__') {
+    customInterestWrapper.style.display = 'block';
+    customInterestInput.required = true;
+  } else {
+    customInterestWrapper.style.display = 'none';
+    customInterestInput.required = false;
+    customInterestInput.value = '';
+  }
+});
+sampleButton.addEventListener('click', function() {
+  currentRequestId = '';
+  feedbackCard.style.display = 'none';
+  feedbackMessage.textContent = '';
+  feedbackMessage.className = '';
+
+  outputCard.style.display = 'block';
+  resultBox.className = 'result';
+  resultMeta.textContent = 'Sample card | No AI quota used';
+
+  const sampleMarkdown = `## Tiny Definition
+An API is a way for one software system to talk to another software system using agreed rules.
+
+## ELI5 Explanation
+Imagine two apps want to work together. They need a clear way to ask for information and get an answer back. An API is that agreed way of communicating.
+
+## Analogy
+Think of APIs like cricket signals between a batter and a non-striker.
+
+The players do not need to explain the whole strategy every time. A clear signal tells the other person what is needed: run, wait, call, or adjust. APIs work similarly. One system sends a clear request, and the other system responds in a predictable way.
+
+## Mapping Table
+| API concept | Cricket analogy |
+|---|---|
+| API | Shared signal system |
+| App making request | Batter calling for a run |
+| App responding | Non-striker reacting |
+| API documentation | Team playbook |
+| Response | The call being understood |
+| Error | Miscommunication or wrong call |
+
+## Where the Analogy Breaks
+Cricket signals are informal and human. APIs are formal, technical interfaces that can include authentication, rate limits, data formats, and error codes.
+
+## Mini Quiz
+What is the main purpose of an API?
+
+A. To let systems interact through agreed rules  
+B. To replace all software developers  
+C. To make every app public  
+
+**Correct answer:** A`;
+
+  resultBox.innerHTML = renderMarkdownLite(sampleMarkdown);
+});
+
+      let currentRequestId = '';
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const selectedInterestWorld = document.getElementById('interest_world').value;
+const customInterestWorld = document.getElementById('custom_interest_world').value.trim();
+
+const finalInterestWorld =
+  selectedInterestWorld === '__custom__'
+    ? customInterestWorld
+    : selectedInterestWorld;
+
+const payload = {
+  topic: document.getElementById('topic').value,
+  interest_world: finalInterestWorld,
+  audience_level: document.getElementById('audience_level').value,
+  output_style: document.getElementById('output_style').value
+};
+
+        currentRequestId = '';
+        feedbackCard.style.display = 'none';
+        feedbackMessage.textContent = '';
+        feedbackMessage.className = '';
+
+        button.disabled = true;
+        button.textContent = 'Generating...';
+        outputCard.style.display = 'block';
+        resultMeta.textContent = 'Request sent to Analogy Arcade agents...';
+        resultBox.className = 'result';
+        resultBox.textContent = 'Loading. The tiny metaphor goblins are assembling your explanation.';
+
+        google.script.run
+          .withSuccessHandler(function(response) {
+            button.disabled = false;
+            button.textContent = 'Explain it 🎮';
+
+            if (!response || !response.ok) {
+              resultMeta.textContent = 'Something went wrong.';
+              resultBox.className = 'error';
+              resultBox.textContent = JSON.stringify(response, null, 2);
+              return;
+            }
+
+            currentRequestId = response.request_id || '';
+
+            resultBox.className = 'result';
+            resultMeta.textContent =
+              'Request ID: ' + response.request_id +
+              ' | Status: ' + response.status +
+              ' | Mode: ' + response.mode;
+
+            resultBox.innerHTML = renderMarkdownLite(response.result || 'No result returned.');
+
+            feedbackCard.style.display = 'block';
+          })
+          .withFailureHandler(function(error) {
+            button.disabled = false;
+            button.textContent = 'Explain it 🎮';
+
+            outputCard.style.display = 'block';
+            feedbackCard.style.display = 'none';
+            resultMeta.textContent = 'Apps Script error.';
+            resultBox.className = 'error';
+            resultBox.textContent = error.message || JSON.stringify(error, null, 2);
+          })
+          .generateExplanation(payload);
+      });
+
+      feedbackForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        if (!currentRequestId) {
+          feedbackMessage.className = 'error';
+          feedbackMessage.textContent = 'Missing request ID. Please generate an explanation first.';
+          return;
+        }
+
+        const feedbackPayload = {
+          request_id: currentRequestId,
+          rating: document.getElementById('rating').value,
+          feedback_text: document.getElementById('feedback_text').value,
+          too_simple: document.getElementById('too_simple').checked,
+          too_complex: document.getElementById('too_complex').checked,
+          analogy_wrong: document.getElementById('analogy_wrong').checked,
+          not_fun: document.getElementById('not_fun').checked,
+          would_share: document.getElementById('would_share').checked
+        };
+
+        feedbackButton.disabled = true;
+        feedbackButton.textContent = 'Saving feedback...';
+        feedbackMessage.textContent = '';
+        feedbackMessage.className = '';
+
+        google.script.run
+          .withSuccessHandler(function(response) {
+            feedbackButton.disabled = false;
+            feedbackButton.textContent = 'Submit feedback';
+
+            if (!response || !response.ok) {
+              feedbackMessage.className = 'error';
+              feedbackMessage.textContent = JSON.stringify(response, null, 2);
+              return;
+            }
+
+            feedbackMessage.className = 'success';
+            feedbackMessage.textContent = response.message || 'Feedback saved. Thank you.';
+
+            feedbackForm.reset();
+          })
+          .withFailureHandler(function(error) {
+            feedbackButton.disabled = false;
+            feedbackButton.textContent = 'Submit feedback';
+            feedbackMessage.className = 'error';
+            feedbackMessage.textContent = error.message || JSON.stringify(error, null, 2);
+          })
+          .submitFeedback(feedbackPayload);
+      });
+      function renderMarkdownLite(markdown) {
+  const escaped = escapeHtml(String(markdown || ''));
+
+  const lines = escaped.split('\n');
+  let html = '';
+  let inList = false;
+  let inTable = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i].trim();
+
+    if (!line) {
+      if (inList) {
+        html += '</ul>';
+        inList = false;
+      }
+      if (inTable) {
+        html += '</tbody></table>';
+        inTable = false;
+      }
+      continue;
+    }
+
+    if (line.startsWith('|') && line.endsWith('|')) {
+      const nextLine = lines[i + 1] ? lines[i + 1].trim() : '';
+
+      if (!inTable) {
+        const cells = splitMarkdownTableRow(line);
+        const isHeaderNext = nextLine.includes('---');
+
+        html += '<table>';
+
+        if (isHeaderNext) {
+          html += '<thead><tr>';
+          cells.forEach(cell => {
+            html += '<th>' + formatInlineMarkdown(cell) + '</th>';
+          });
+          html += '</tr></thead><tbody>';
+          i++;
+        } else {
+          html += '<tbody><tr>';
+          cells.forEach(cell => {
+            html += '<td>' + formatInlineMarkdown(cell) + '</td>';
+          });
+          html += '</tr>';
+        }
+
+        inTable = true;
+      } else {
+        const cells = splitMarkdownTableRow(line);
+        html += '<tr>';
+        cells.forEach(cell => {
+          html += '<td>' + formatInlineMarkdown(cell) + '</td>';
+        });
+        html += '</tr>';
+      }
+
+      continue;
+    }
+
+    if (inTable) {
+      html += '</tbody></table>';
+      inTable = false;
+    }
+
+    if (line.startsWith('## ')) {
+      if (inList) {
+        html += '</ul>';
+        inList = false;
+      }
+      html += '<h2>' + formatInlineMarkdown(line.replace(/^## /, '')) + '</h2>';
+      continue;
+    }
+
+    if (line.startsWith('### ')) {
+      if (inList) {
+        html += '</ul>';
+        inList = false;
+      }
+      html += '<h3>' + formatInlineMarkdown(line.replace(/^### /, '')) + '</h3>';
+      continue;
+    }
+
+    if (line.startsWith('- ')) {
+      if (!inList) {
+        html += '<ul>';
+        inList = true;
+      }
+      html += '<li>' + formatInlineMarkdown(line.replace(/^- /, '')) + '</li>';
+      continue;
+    }
+
+    if (/^\d+\.\s/.test(line)) {
+      if (!inList) {
+        html += '<ul>';
+        inList = true;
+      }
+      html += '<li>' + formatInlineMarkdown(line.replace(/^\d+\.\s/, '')) + '</li>';
+      continue;
+    }
+
+    if (inList) {
+      html += '</ul>';
+      inList = false;
+    }
+
+    html += '<p>' + formatInlineMarkdown(line) + '</p>';
+  }
+
+  if (inList) {
+    html += '</ul>';
+  }
+
+  if (inTable) {
+    html += '</tbody></table>';
+  }
+
+  return html;
+}
+
+function splitMarkdownTableRow(line) {
+  return line
+    .replace(/^\|/, '')
+    .replace(/\|$/, '')
+    .split('|')
+    .map(cell => cell.trim());
+}
+
+function formatInlineMarkdown(text) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>');
+}
+
+function escapeHtml(text) {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+    </script>
+  </body>
+</html>
