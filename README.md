@@ -26,7 +26,7 @@ Explain boring, confusing, or scary topics through things you may actually care 
 
 > Public beta note: the live demo uses free-tier AI limits and has a daily request cap. Please do not enter private, sensitive, confidential, medical, legal, or financial information.
 
-Analogy Arcade is a browser-only AI learning app that explains any topic through worlds people already understand — football tactics, space missions, Bollywood drama, brick-by-brick builds, vacation itineraries, superhero-style teams, and more.
+Analogy Arcade is a browser-only AI learning app that explains any topic through worlds people already understand — football tactics, space missions, Bollywood drama, brick-by-brick builds, vacation itineraries, superhero-style teams, or a custom interest the user provides.
 
 The goal is not just to generate cute analogies. The goal is to demonstrate how agentic AI workflows can make explanations clearer, safer, more personalized, and more useful.
 
@@ -37,7 +37,7 @@ The goal is not just to generate cute analogies. The goal is to demonstrate how 
 A user enters:
 
 - A topic they want to understand
-- An interest area or “world” they relate to
+- A preset interest area or a custom interest world they relate to
 - Their audience level
 - The type of explanation they want
 
