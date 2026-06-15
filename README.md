@@ -1,9 +1,7 @@
-# analogy-arcade
+# Analogy-Arcade
 Explain boring, confusing, or scary topics through things you may actually care about — football ⚽️, space 🛸, Bollywood 🪩, LEGO 🧱, vacations 🏖️, and other perfectly valid personality traits.
 
 ------
-
-# Analogy Arcade
 
 **Pick a topic. Pick a vibe. Let AI turn “huh?” into “ohhh.”**
 
