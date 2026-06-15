@@ -17,6 +17,8 @@ Explain boring, confusing, or scary topics through things you may actually care 
 - **Showcase site:** https://friendly-neighborhood-product-manager.github.io/analogy-arcade/
 - **Live demo:** https://script.google.com/macros/s/AKfycby8jV-vfUYrWbiCJnYuhQgHflsHHAe23kZl2Tx25CPFIvltbwJiekLE49PJ3vXSuMzZ/exec
 - **PRD:** [docs/PRD.md](docs/PRD.md)
+- **Agent architecture:** [docs/agent-architecture.md](docs/agent-architecture.md)
+- **Architecture diagram:** [docs/architecture-diagram.md](docs/architecture-diagram.md)
 
 > Public beta note: the live demo uses free-tier AI limits and has a daily request cap. Please do not enter private, sensitive, confidential, medical, legal, or financial information.
 
