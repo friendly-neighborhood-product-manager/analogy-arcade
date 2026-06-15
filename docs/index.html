@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analogy Arcade</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4ef;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 70px;
+    }
+
+    .hero {
+      background: #ffffff;
+      border: 2px solid #111827;
+      border-radius: 22px;
+      padding: 34px;
+      box-shadow: 8px 8px 0 #111827;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 48px;
+      letter-spacing: -1.5px;
+    }
+
+    h2 {
+      margin-top: 38px;
+      font-size: 28px;
+    }
+
+    h3 {
+      margin-top: 24px;
+    }
+
+    .tagline {
+      font-size: 20px;
+      color: #4b5563;
+      margin: 0 0 22px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 2px solid #111827;
+      background: #111827;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 18px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    code, pre {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 12px;
+    }
+
+    pre {
+      padding: 18px;
+      overflow-x: auto;
+    }
+
+    code {
+      padding: 2px 6px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+
+    .small {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3f4f6;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>Analogy Arcade</h1>
+      <p class="tagline">Pick a topic. Pick a vibe. Let AI turn “huh?” into “ohhh.”</p>
+
+      <p>
+        Analogy Arcade is a browser-only AI learning app that explains confusing topics through worlds people already understand:
+        football tactics, space missions, Bollywood drama, brick-by-brick builds, vacation itineraries, superhero-style teams, and more.
+      </p>
+
+      <div class="pill-row">
+        <span class="pill">Agentic workflows</span>
+        <span class="pill">Prompt design</span>
+        <span class="pill">AI evaluation</span>
+        <span class="pill">Google Apps Script</span>
+        <span class="pill">Activepieces</span>
+        <span class="pill">Gemini</span>
+        <span class="pill">Google Sheets backend</span>
+      </div>
+
+      <div class="button-row">
+        <a class="button" href="https://script.google.com/macros/s/AKfycby8jV-vfUYrWbiCJnYuhQgHflsHHAe23kZl2Tx25CPFIvltbwJiekLE49PJ3vXSuMzZ/exec" target="_blank" rel="noopener noreferrer">
+          Try the live demo
+        </a>
+        <a class="button secondary" href="./PRD.md">
+          Read the PRD
+        </a>
+        <a class="button secondary" href="https://github.com/friendly-neighborhood-product-manager/analogy-arcade">
+          View GitHub repo
+        </a>
+      </div>
+
+      <p class="small">
+        Public beta note: the live demo uses free-tier AI limits and has a daily request cap.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>What it does</h2>
+      <p>
+        A user enters a topic, chooses an interest world, selects an audience level, and gets a personalized learning card.
+      </p>
+
+      <div class="grid">
+        <div>
+          <h3>Input</h3>
+          <ul>
+            <li>Topic</li>
+            <li>Interest world</li>
+            <li>Audience level</li>
+            <li>Output style</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Output</h3>
+          <ul>
+            <li>Tiny definition</li>
+            <li>ELI5 explanation</li>
+            <li>Personalized analogy</li>
+            <li>Mapping table</li>
+            <li>Where the analogy breaks</li>
+            <li>Mini quiz</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Agent workflow</h2>
+      <p>
+        The product is designed to show AI workflow thinking beyond a single prompt.
+      </p>
+
+      <pre>User Input
+  ↓
+Explainer Agent
+  ↓
+Analogy Critic Agent
+  ↓
+Rewrite Agent
+  ↓
+Request / Output / Trace Logging
+  ↓
+Learning Card</pre>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Explainer Agent</td>
+            <td>Creates the first learning card using the user’s topic, interest world, audience level, and requested style.</td>
+          </tr>
+          <tr>
+            <td>Analogy Critic Agent</td>
+            <td>Scores the explanation for clarity, accuracy, analogy fit, usefulness, fun, and safety.</td>
+          </tr>
+          <tr>
+            <td>Rewrite Agent</td>
+            <td>Improves the explanation using the critic’s feedback before the final answer is returned.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Tech stack</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Public showcase</td>
+            <td>GitHub Pages</td>
+          </tr>
+          <tr>
+            <td>Live web app</td>
+            <td>Google Apps Script Web App</td>
+          </tr>
+          <tr>
+            <td>Workflow automation</td>
+            <td>Activepieces</td>
+          </tr>
+          <tr>
+            <td>AI model</td>
+            <td>Gemini API free tier</td>
+          </tr>
+          <tr>
+            <td>Backend/logging</td>
+            <td>Google Sheets</td>
+          </tr>
+          <tr>
+            <td>Product docs</td>
+            <td>GitHub README + PRD</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Why this exists</h2>
+      <p>
+        This project is intentionally built with free, browser-based tools to demonstrate practical AI Product Management skills:
+        product framing, workflow orchestration, prompt design, quality evaluation, responsible AI guardrails, and public launch thinking.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
