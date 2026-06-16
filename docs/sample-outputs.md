@@ -4,6 +4,110 @@ This page shows example outputs from Analogy Arcade.
 
 The live demo has a daily request cap because it uses free-tier AI limits, so these samples help reviewers understand the product even when the live demo is temporarily unavailable.
 
+The current live app also includes:
+
+- Custom interest text input
+- Preset interest chips
+- Audience-level chips
+- Multi-select output-style chips
+- Input summary pills
+- Formatted learning cards
+- Interactive mini quizzes
+- Quota-free sample card preview
+- Feedback capture
+
+---
+
+## Current Learning Card Pattern
+
+Each generated answer card shows the user request at the top in this format:
+
+> Explain `<topic>` in terms of `<interest world>` like I’m a `<audience level>`
+
+In the live UI, the topic, interest world, and audience level appear as pill components.
+
+Example:
+
+> Explain `APIs` in terms of `Cricket` like I’m a `Newbie`
+
+The answer card then includes:
+
+1. Tiny definition
+2. ELI5 explanation
+3. Personalized analogy
+4. Mapping table
+5. Where the analogy breaks
+6. Interactive mini quiz
+
+---
+
+## Interactive Quiz Behavior
+
+The mini quiz is interactive in the live app.
+
+Expected behavior:
+
+- The user sees the question and answer options.
+- The correct answer is hidden until the user clicks an option.
+- If the user selects the correct answer, it turns green.
+- If the user selects a wrong answer:
+  - The selected wrong answer turns amber.
+  - The correct answer turns green.
+  - The unselected wrong options are greyed out.
+
+The samples below show the quiz content. In the live app, these are rendered as clickable answer options.
+
+---
+
+## Sample 0: Quota-Free Sample Card
+
+This is the sample card available through the **Show sample card** button in the live app.
+
+It does not call Gemini and does not consume AI quota.
+
+### Input Summary
+
+> Explain `APIs` in terms of `Cricket` like I’m a `Newbie`
+
+### Tiny Definition
+
+An API is a way for one software system to talk to another software system using agreed rules.
+
+### ELI5 Explanation
+
+Imagine two apps want to work together. They need a clear way to ask for information and get an answer back. An API is that agreed way of communicating.
+
+### Analogy
+
+Think of APIs like cricket signals between a batter and a non-striker.
+
+The players do not need to explain the whole strategy every time. A clear signal tells the other person what is needed: run, wait, call, or adjust. APIs work similarly. One system sends a clear request, and the other system responds in a predictable way.
+
+### Mapping Table
+
+| API concept | Cricket analogy |
+|---|---|
+| API | Shared signal system |
+| App making request | Batter calling for a run |
+| App responding | Non-striker reacting |
+| API documentation | Team playbook |
+| Response | The call being understood |
+| Error | Miscommunication or wrong call |
+
+### Where the Analogy Breaks
+
+Cricket signals are informal and human. APIs are formal, technical interfaces that can include authentication, rate limits, data formats, and error codes.
+
+### Mini Quiz
+
+What is the main purpose of an API?
+
+A. To let systems interact through agreed rules  
+B. To replace all software developers  
+C. To make every app public  
+
+**Correct answer:** A
+
 ---
 
 ## Sample 1: OAuth Through Vacation Itineraries
@@ -14,8 +118,12 @@ The live demo has a daily request cap because it uses free-tier AI limits, so th
 |---|---|
 | Topic | OAuth |
 | Interest world | Vacation itineraries |
-| Audience level | Beginner Product Manager |
+| Audience level | Product Builder |
 | Output style | ELI5 + analogy + mapping table + where the analogy breaks + mini quiz |
+
+### Input Summary
+
+> Explain `OAuth` in terms of `Vacation itineraries` like I’m a `Product Builder`
 
 ### Tiny Definition
 
@@ -68,8 +176,12 @@ C. Apps showing you a login screen
 |---|---|
 | Topic | Product-market fit |
 | Interest world | Football tactics |
-| Audience level | Beginner Product Manager |
+| Audience level | Product Builder |
 | Output style | ELI5 + analogy + mapping table + where the analogy breaks + mini quiz |
+
+### Input Summary
+
+> Explain `Product-market fit` in terms of `Football tactics` like I’m a `Product Builder`
 
 ### Tiny Definition
 
@@ -122,8 +234,12 @@ C. The product has a pretty landing page
 |---|---|
 | Topic | Technical debt |
 | Interest world | Space missions |
-| Audience level | Beginner Product Manager |
+| Audience level | Tech Starter |
 | Output style | ELI5 + analogy + mapping table + where the analogy breaks + mini quiz |
+
+### Input Summary
+
+> Explain `Technical debt` in terms of `Space missions` like I’m a `Tech Starter`
 
 ### Tiny Definition
 
@@ -174,8 +290,12 @@ C. When a team writes documentation
 |---|---|
 | Topic | APIs |
 | Interest world | Brick-by-brick builds |
-| Audience level | Beginner Product Manager |
+| Audience level | Newbie |
 | Output style | ELI5 + analogy + mapping table + where the analogy breaks + mini quiz |
+
+### Input Summary
+
+> Explain `APIs` in terms of `Brick-by-brick builds` like I’m a `Newbie`
 
 ### Tiny Definition
 
@@ -228,8 +348,12 @@ C. Store every password forever
 |---|---|
 | Topic | Gross margin |
 | Interest world | Bollywood drama |
-| Audience level | Beginner Product Manager |
+| Audience level | Curious Learner |
 | Output style | ELI5 + analogy + mapping table + where the analogy breaks + mini quiz |
+
+### Input Summary
+
+> Explain `Gross margin` in terms of `Bollywood drama` like I’m a `Curious Learner`
 
 ### Tiny Definition
 
@@ -272,16 +396,132 @@ C. $160
 
 ---
 
+## Sample 6: Kubernetes Through Football Tactics
+
+### User Input
+
+| Field | Value |
+|---|---|
+| Topic | Kubernetes |
+| Interest world | Football tactics |
+| Audience level | Tech Starter |
+| Output style | ELI5 + analogy + mapping table + where the analogy breaks + mini quiz + make it shorter |
+
+### Input Summary
+
+> Explain `Kubernetes` in terms of `Football tactics` like I’m a `Tech Starter`
+
+### Tiny Definition
+
+Kubernetes is a system that helps run, manage, scale, and recover software containers.
+
+### ELI5 Explanation
+
+When many small pieces of software need to run together, Kubernetes helps decide where they should run, how many copies should exist, and what to do if one breaks.
+
+### Analogy
+
+Kubernetes is like a football manager coordinating a squad during a match.
+
+The manager decides which players are on the pitch, adjusts the formation, replaces injured players, and makes sure the team keeps functioning even when something goes wrong.
+
+### Mapping Table
+
+| Kubernetes concept | Football analogy |
+|---|---|
+| Container | Player |
+| Pod | Small unit of players working together |
+| Cluster | Whole squad and staff |
+| Scheduler | Manager deciding who plays where |
+| Scaling | Adding more players to handle pressure |
+| Self-healing | Substituting an injured player |
+
+### Where the Analogy Breaks
+
+Football players are humans with judgment and creativity. Containers are software units that follow defined rules. Kubernetes is more automated and technical than a manager shouting from the touchline.
+
+### Mini Quiz
+
+What is one major job of Kubernetes?
+
+A. Manage and recover running containers  
+B. Design football kits  
+C. Replace all developers with one server  
+
+**Correct answer:** A
+
+---
+
+## Sample 7: SaaS Pricing Through Arcade Games
+
+### User Input
+
+| Field | Value |
+|---|---|
+| Topic | SaaS pricing |
+| Interest world | Arcade games |
+| Audience level | Product Builder |
+| Output style | ELI5 + analogy + mapping table + where the analogy breaks + mini quiz + make it funnier |
+
+### Input Summary
+
+> Explain `SaaS pricing` in terms of `Arcade games` like I’m a `Product Builder`
+
+### Tiny Definition
+
+SaaS pricing is how a software company charges customers for access to its online product.
+
+### ELI5 Explanation
+
+SaaS companies often charge based on usage, features, seats, or subscription tiers. The goal is to match price with value.
+
+### Analogy
+
+SaaS pricing is like an arcade deciding how people pay to play.
+
+Some players buy one token at a time. Some buy an unlimited wristband. Some pay extra for premium machines. Some get a group pass. The arcade wants pricing that feels fair, encourages more play, and still keeps the lights on.
+
+### Mapping Table
+
+| SaaS pricing concept | Arcade analogy |
+|---|---|
+| Subscription | Monthly arcade pass |
+| Usage-based pricing | Paying per game token |
+| Feature tier | Access to premium machines |
+| Seat-based pricing | Number of friends allowed on the pass |
+| Free trial | First game free |
+| Expansion revenue | Player buys more tokens or upgrades |
+
+### Where the Analogy Breaks
+
+Software value can be harder to measure than arcade usage. SaaS pricing also involves renewals, procurement, integrations, support costs, and competitive positioning.
+
+### Mini Quiz
+
+Which pricing model charges more as customers use more?
+
+A. Usage-based pricing  
+B. Random pricing  
+C. One-time snack pricing  
+
+**Correct answer:** A
+
+---
+
 ## Why These Samples Matter
 
 These outputs demonstrate the core product pattern:
 
-```text
-User topic
-→ Interest-based analogy
-→ Mapping table
-→ Where the analogy breaks
-→ Mini quiz
-```
+| Product element | Purpose |
+|---|---|
+| User topic | Defines what the user wants to understand |
+| Interest world | Personalizes the explanation |
+| Audience level | Controls depth and tone |
+| Input summary | Makes the user request visible in the answer card |
+| Analogy | Creates a familiar mental model |
+| Mapping table | Shows how the analogy maps to the concept |
+| Where the analogy breaks | Prevents overlearning the metaphor |
+| Interactive quiz | Turns passive reading into lightweight learning |
+| Feedback form | Captures user quality signals |
 
-They also demonstrate the product guardrail that every analogy should include its own limits. The goal is not only to make learning fun, but also to avoid making a metaphor sound more complete than it really is.
+The goal is not only to make learning fun, but also to avoid making a metaphor sound more complete than it really is.
