@@ -29,7 +29,7 @@ Explain boring, confusing, or scary topics through things you may actually care 
 
 > Public beta note: the live demo uses free-tier AI limits and has a daily request cap. Please do not enter private, sensitive, confidential, medical, legal, or financial information.
 
-Analogy Arcade is a browser-only AI learning app that explains any topic through worlds people already understand — football tactics, space missions, Bollywood drama, brick-by-brick builds, vacation itineraries, superhero-style teams, or a custom interest the user provides.
+Analogy Arcade is a browser-only AI learning app that explains any topic through worlds people already understand — football tactics, space missions, Bollywood drama, brick-by-brick builds, vacation itineraries, superhero-style teams, or any custom interest the user types in.
 
 The goal is not just to generate cute analogies. The goal is to demonstrate how agentic AI workflows can make explanations clearer, safer, more personalized, and more useful.
 
@@ -40,9 +40,9 @@ The goal is not just to generate cute analogies. The goal is to demonstrate how 
 A user enters:
 
 - A topic they want to understand
-- A preset interest area or a custom interest world they relate to
-- Their audience level
-- The type of explanation they want
+- A custom interest world through a text field, preset suggestion, or preset button
+- An audience level through clickable audience chips
+- One or more output styles through multi-select chips
 
 The app returns:
 
@@ -50,9 +50,30 @@ The app returns:
 - A personalized analogy
 - A concept-to-analogy mapping table
 - A “where the analogy breaks” section
-- A mini quiz
-- A visible agent workflow trace
+- An interactive mini quiz
+- A formatted learning card
+- A visible input summary in the format: “Explain `<topic>` in terms of `<interest world>` like I’m a `<audience level>`”
+- A feedback form tied to the generated request ID
 - A quota-free sample card so users can preview the experience without using AI quota
+
+---
+
+## Current UX
+
+The live MVP includes several interactive product features:
+
+| Feature | Behavior |
+|---|---|
+| Interest world input | User can type a custom interest or click a preset |
+| Preset suggestions | Matching presets appear while the user types |
+| Preset chips | Clicking a preset fills the interest field; clicking again clears it |
+| Audience chips | User selects one audience level by clicking a chip |
+| Output-style chips | User can multi-select output styles |
+| Progress tracker | Right-side tracker turns checkpoints green as inputs are completed |
+| Input summary | Learning cards show the user request as pill components |
+| Sample card toggle | “Show sample card” displays a quota-free sample; “Hide sample card” hides it |
+| Interactive quiz | User clicks an answer; correct answer turns green, selected wrong answer turns amber, unselected wrong options grey out |
+| Back-to-top button | Floating up-arrow appears when scrolling down and returns the user to the top |
 
 ---
 
@@ -95,7 +116,7 @@ This project is intentionally designed to be built with free or browser-based to
 
 ---
 
-## Planned stack
+## Stack
 
 - **GitHub Pages** for the public showcase
 - **Google Apps Script** for the browser-based app
@@ -103,6 +124,35 @@ This project is intentionally designed to be built with free or browser-based to
 - **Gemini API free tier** for AI generation
 - **Activepieces** for workflow automation and agent orchestration
 - **Google Drive / Docs** for generated artifacts
+
+
+
+---
+## Project status
+
+Public MVP live.
+
+Current capabilities:
+
+- Live browser app
+- GitHub Pages showcase
+- Preset and custom interest worlds
+- Text-field interest world input with preset suggestions
+- Clickable interest preset chips
+- Clickable audience-level chips
+- Multi-select output-style chips
+- Right-side vertical progress tracker
+- Formatted input summary using pill components
+- Gemini-powered Explainer, Critic, and Rewrite Agent workflow
+- Google Sheets backend for requests, outputs, traces, and feedback
+- Daily request cap to protect free-tier AI quota
+- Formatted learning card UI
+- Interactive mini quiz
+- Quota-free sample card preview
+- Sample card show/hide toggle
+- Auto-scroll to answer/sample card area
+- Floating back-to-top button
+- Public PRD, architecture, prompt design, evaluation plan, runbook, sample outputs, security notes, and sanitized Apps Script source
 
 ---
 
