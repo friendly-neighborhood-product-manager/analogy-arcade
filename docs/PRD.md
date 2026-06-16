@@ -1,7 +1,7 @@
 # Analogy Arcade PRD
 
 **Product name:** Analogy Arcade  
-**Version:** v0.4
+**Version:** v0.6
 **Owner:** friendly-neighborhood-product-manager  
 **Status:** Public MVP live  
 **Last updated:** 2026-06-15  
@@ -126,10 +126,32 @@ Version 1 will not include:
 
 The user provides:
 
-- Topic
-- Preset interest world or custom interest world
-- Audience level
-- Output style
+- Topic through a text field
+- Interest world through a custom text field, preset suggestion, or preset button
+- Audience level through clickable audience chips
+- Output style through multi-select output-style chips
+
+Current audience levels:
+
+- 🌱 Newbie
+- 🔎 Curious Learner
+- 🛠️ Tech Starter
+- 🚀 Product Builder
+- 👑 Boss Mode
+
+Current default output styles:
+
+- ELI5
+- Analogy
+- Mapping table
+- Where the analogy breaks
+- Mini quiz
+
+Optional output styles:
+
+- Make it funnier
+- Make it shorter
+- Agent note
 
 Example:
 
@@ -149,11 +171,13 @@ The app returns:
 3. Personalized analogy
 4. Mapping table
 5. Where the analogy breaks
-6. Mini quiz
-7. Agent trace
-8. Quality score
+6. Interactive mini quiz
+7. Agent trace or agent note when requested
+8. Quality score or review signal when available
 9. Formatted learning card UI
 10. Quota-free sample card
+11. Input summary in the format: “Explain `<topic>` in terms of `<interest world>` like I’m a `<audience level>`”
+12. Feedback form attached to generated request IDs
 
 ---
 
@@ -430,8 +454,48 @@ A result should be rewritten if any of these are true:
 - [x] Allow users to preview the product without consuming Gemini quota
 - [x] Hide feedback form for sample cards so feedback only attaches to real generated request IDs
 
+### Phase 5.7: Interactive Learning Controls — Complete
+
+- [x] Replace interest-world dropdown with a text field
+- [x] Add preset interest buttons below the interest text field
+- [x] Add preset suggestions as users type
+- [x] Treat unmatched interest text as a custom interest world
+- [x] Allow selected interest presets to be unselected by clicking again
+- [x] Replace audience dropdown with clickable audience-level chips
+- [x] Add audience levels: Newbie, Curious Learner, Tech Starter, Product Builder, Boss Mode
+- [x] Allow selected audience level to be unselected by clicking again
+- [x] Replace output-style textarea with multi-select output-style chips
+- [x] Format selected output styles as a plus-separated string for the backend
+
+### Phase 5.8: Interactive Quiz and Navigation UX — Complete
+
+- [x] Make mini quiz options clickable
+- [x] Hide quiz answer until the user selects an option
+- [x] Show correct answer in green
+- [x] Show selected wrong answer in amber
+- [x] Grey out unselected wrong options after answer selection
+- [x] Add quota-free sample card toggle
+- [x] Change sample card button text between “Show sample card” and “Hide sample card”
+- [x] Add auto-scroll to the sample card and answer card
+- [x] Add floating back-to-top button
+- [x] Hide back-to-top button when user is at the top of the page
+
+### Phase 5.9: Guided Input Progress and Input Summary — Complete
+
+- [x] Add right-side vertical progress tracker
+- [x] Align progress checkpoints beside topic field, interest field, audience row, output-style row, and generate button
+- [x] Turn tracker checkpoints green when inputs are ready
+- [x] Add fifth checkpoint for the “Explain it” action
+- [x] Add input summary to sample card and generated answer card
+- [x] Render input summary as “Explain `<topic>` in terms of `<interest world>` like I’m a `<audience level>`”
+- [x] Style summary parameters as pill components
+- [x] Trim “Boss Mode” to “Boss” in the input summary
+- [x] Make connector text in the summary non-bold while keeping parameter pills bold
+
 ### Phase 6: Next Iteration — Planned
 
+- [ ] Add screenshot gallery to GitHub Pages
+- [ ] Add exportable/shareable learning cards
 - [ ] Add structured JSON output from agents
 - [ ] Split final output into separate Google Sheet columns
 - [ ] Add conditional rewrite logic
@@ -464,6 +528,33 @@ A result should be rewritten if any of these are true:
 ---
 
 ## 19. Changelog
+
+### v0.6
+
+- Added vertical progress tracker aligned to form inputs and generate action
+- Added fifth progress checkpoint for the “Explain it” button
+- Added input summary to sample and answer cards
+- Styled input summary parameters as pill components
+- Increased input summary font size to match section headings
+- Made input summary connector text non-bold
+- Trimmed “Boss Mode” to “Boss” in the input summary
+- Added auto-scroll behavior for sample card and generated answer card
+- Added floating back-to-top button that appears only after scrolling down
+- Updated sample card behavior so the button toggles between “Show sample card” and “Hide sample card”
+
+### v0.5
+
+- Replaced interest-world dropdown with custom text input and preset buttons
+- Added preset suggestion behavior while typing an interest world
+- Added custom interest support when no preset matches
+- Added ability to unselect a chosen preset by clicking it again
+- Replaced audience dropdown with clickable audience-level chips
+- Added audience levels: Newbie, Curious Learner, Tech Starter, Product Builder, and Boss Mode
+- Replaced output-style textarea with multi-select output-style chips
+- Removed emojis from output-style labels
+- Added interactive mini quiz rendering
+- Added hidden-answer quiz behavior
+- Added green correct-answer state, amber selected-wrong state, and greyed-out unselected wrong options
 
 ### v0.4
 
